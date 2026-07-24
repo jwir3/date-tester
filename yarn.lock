@@ -823,7 +823,7 @@
   dependencies:
     type-detect "4.0.8"
 
-"@sinonjs/fake-timers@^15.4.0":
+"@sinonjs/fake-timers@15.4.0", "@sinonjs/fake-timers@^15.4.0":
   version "15.4.0"
   resolved "https://registry.yarnpkg.com/@sinonjs/fake-timers/-/fake-timers-15.4.0.tgz#5d40c151a9e66075fe4520bec40bccfe54931962"
   integrity sha512-DsG+8/LscQIQg68J6Ef3dv10u6nVyetYn923s3/sus5eaGfTo1of5WMZSLf0UJc9KDuKPilPH0UDJCjvNbDNCA==
@@ -2513,6 +2513,13 @@ std-env@^4.0.0-rc.1:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-4.2.0.tgz#8ebe0ec60485668ab47227b312f4254cdf80c9d3"
   integrity sha512-oCUKSupKTHX53EyjDtuZQ64pjLJ6yYCtpmEw0goYxtjG9KpbRe8KAsl2tBUGU9DyMcJ0RwJ8GqJAFzMXcXW1Rw==
+
+storybook-addon-mock-date@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/storybook-addon-mock-date/-/storybook-addon-mock-date-3.1.1.tgz#92242f8dc1125e458bf6e76df61f878d92bbb776"
+  integrity sha512-P/dV9T3DUSoLaS7Vk57U/2Ppcxp/Xo/khWWBsuOH5+GQKEGMgyt+6gyWG8l/otWfSEWLzmnUQPw6d+4iZ3i2ww==
+  dependencies:
+    "@sinonjs/fake-timers" "15.4.0"
 
 storybook@^10.5.3:
   version "10.5.3"

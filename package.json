@@ -37,6 +37,7 @@
     "playwright": "^1.61.1",
     "prop-types": "^15.8.1",
     "storybook": "^10.5.3",
+    "storybook-addon-mock-date": "^3.1.1",
     "vite": "^8.1.1",
     "vitest": "^4.1.10"
   }
