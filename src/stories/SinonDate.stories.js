@@ -16,7 +16,8 @@ import { SimpleDate } from './SimpleDate';
 const SINON_FAKE_TIMESTAMP = Date.UTC(2000, 0, 1);
 // Only fake `Date` - faking all timers (Sinon's default) also fakes setTimeout/setInterval/
 // requestAnimationFrame, which breaks Storybook and Chromatic's own rendering machinery.
-sinon.useFakeTimers({ now: SINON_FAKE_TIMESTAMP, toFake: ['Date'] });
+// Keep a handle on the clock so a later story can advance it with `clock.tick()`.
+const clock = sinon.useFakeTimers({ now: SINON_FAKE_TIMESTAMP, toFake: ['Date'] });
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
@@ -40,6 +41,19 @@ export default {
 // `super(...)` rather than relying on the zero-argument case - so the frozen Date's constructor
 // never gets a chance to override it.
 export const SinonFakeTimers = {
+  args: {
+    dateString: new Date().toDateString(),
+  },
+};
+
+// Advance Sinon's fake clock forward with `clock.tick()`, then read `Date` again - this confirms
+// the tick/advance API actually moves whichever Date is currently active (Sinon's fake, layered
+// over Chromatic's frozen Date per the precedence established above), rather than the fake clock
+// silently staying pinned to its initial instant or drifting back to the frozen/real one.
+const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+clock.tick(ONE_DAY_MS);
+
+export const SinonClockTick = {
   args: {
     dateString: new Date().toDateString(),
   },

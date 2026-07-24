@@ -12,6 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "moment": "^2.30.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "sinon": "^22.1.0"
